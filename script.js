@@ -54,6 +54,10 @@ function removeC() {
     for(let i = 0; i < numRows; i++){
         rows[i].deleteCell(-1);
     }
+
+    if(numRows === 0){
+        table.deleteRow(-1);
+    }
 }
 
 // Set global variable for selected color
