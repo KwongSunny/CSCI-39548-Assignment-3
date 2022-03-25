@@ -49,11 +49,19 @@ function removeC() {
 
 // Set global variable for selected color
 function selectColor(){
+    colorSelected = document.getElementById("selectedColorId").value;
 }
 
 // Fill all uncolored cells
 function fillU(){
+    let table = document.getElementById('grid');
 
+    for(let i = 0; i < numRows; i++){
+        let cells = table.rows[i].cells;
+        for(let j = 0; j < numCols; j++){
+            if(cells[j].style.backgroundColor === '') cells[j].style.backgroundColor = colorSelected;
+        }
+    }
 }
 
 // Fill all cells
