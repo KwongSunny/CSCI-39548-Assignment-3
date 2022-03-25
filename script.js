@@ -75,8 +75,14 @@ function fillAll(){
         }
     }
 }
-
 // Clear all cells
 function clearAll(){
+    let table = document.getElementById('grid');
 
+    for(let i = 0; i < numRows; i++){
+        let cells = table.rows[i].cells;
+        for(let j = 0; j < numCols; j++){
+            cells[j].style.backgroundColor = '';
+        }
+    }
 }
