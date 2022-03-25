@@ -30,7 +30,10 @@ function addC() {
 
 // Remove a row
 function removeR() {
+    if(numRows > 0) numRows--;
+    let table = document.getElementById('grid');
 
+    table.deleteRow(-1);
 }
 
 // Remove a column
