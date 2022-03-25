@@ -47,16 +47,21 @@ function removeR() {
 // Remove a column
 function removeC() {
     if(numCols > 0) numCols--;
+
+    
+    if(numCols === 0){
+        let table = document.getElementById('grid');
+        for(let i = 0; i < numRows; i++){
+            table.deleteRow(-1);
+        }
+    }
+    
     if(numCols === 0) numRows = 0;
 
     let rows = document.getElementById('grid').rows;
 
     for(let i = 0; i < numRows; i++){
         rows[i].deleteCell(-1);
-    }
-
-    if(numRows === 0){
-        table.deleteRow(-1);
     }
 }
 
