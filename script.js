@@ -18,7 +18,14 @@ function addR() {
 
 // Add a column
 function addC() {
+    numCols++;
 
+    let rows = document.getElementById('grid').rows;
+
+    for(let i = 0; i < numRows; i++){
+        let cell = rows[i].insertCell(-1);
+        cell.onclick = (e) => {e.target.style.backgroundColor = colorSelected}
+    }
 }
 
 // Remove a row
