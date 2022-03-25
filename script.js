@@ -20,8 +20,13 @@ function addR() {
 function addC() {
     numCols++;
 
-    let rows = document.getElementById('grid').rows;
+    if(numRows === 0){
+        numRows++;
+        let table = document.getElementById('grid');
+        table.insertRow(-1);
+    }
 
+    let rows = document.getElementById('grid').rows;
     for(let i = 0; i < numRows; i++){
         let cell = rows[i].insertCell(-1);
         cell.onclick = (e) => {e.target.style.backgroundColor = colorSelected}
