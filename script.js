@@ -6,6 +6,7 @@ let colorSelected;
 // Add a row
 function addR() {
     numRows++;
+    if(numCols === 0) numCols++;
 
     let table = document.getElementById('grid');
 
