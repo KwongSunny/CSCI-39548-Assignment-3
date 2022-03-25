@@ -31,6 +31,8 @@ function addC() {
 // Remove a row
 function removeR() {
     if(numRows > 0) numRows--;
+    if(numRows === 0) numCols = 0;
+
     let table = document.getElementById('grid');
 
     table.deleteRow(-1);
